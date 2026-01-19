@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkGold - Digital Gold Investment Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div class="particles-container" id="particlesContainer"></div>
+
+    <!-- Nature Elements -->
+    <div class="nature-container">
+        <div class="nature-element">🌳</div>
+        <div class="nature-element">🌲</div>
+        <div class="nature-element">🌴</div>
+        <div class="nature-element">🌿</div>
+        <div class="nature-element">🌳</div>
+        <div class="nature-element">🌲</div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="gold-icon">✦</span>DarkGold
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#plans" class="nav-link">Plans</a></li>
+                <li><a href="#calculator" class="nav-link">Calculator</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#sports" class="nav-link">Sports</a></li>
+                <li class="profile-menu">
+                    <div class="profile-icon" onclick="toggleProfileMenu()" id="profileIcon" style="display: none;">
+                        <span class="profile-avatar">👤</span>
+                        <span class="profile-name" id="navUserName">User</span>
+                        <span class="profile-dropdown">▼</span>
+                    </div>
+                    <div class="profile-dropdown-menu" id="profileDropdown" style="display: none;">
+                        <div class="profile-menu-item" onclick="openProfileModal()">
+                            <span class="menu-icon">⚙️</span>
+                            Profile Settings
+                        </div>
+                        <div class="profile-menu-item" onclick="openProfileModal(); setTimeout(() => switchProfileTab('transactions'), 100)">
+                            <span class="menu-icon">📊</span>
+                            Transaction History
+                        </div>
+                        <div class="profile-menu-item" onclick="openDepositModal()">
+                            <span class="menu-icon">💰</span>
+                            Deposit Funds
+                        </div>
+                        <div class="profile-menu-item" onclick="openWithdrawalModal()">
+                            <span class="menu-icon">💸</span>
+                            Withdraw Funds
+                        </div>
+
+                        <div class="profile-menu-divider"></div>
+                        <div class="profile-menu-item logout" onclick="handleLogout()">
+                            <span class="menu-icon">🚪</span>
+                            Logout
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#" class="nav-link btn-login" onclick="openAuthModal('login')">Login</a></li>
+                <li><a href="#" class="nav-link btn-signup" onclick="openAuthModal('signup')">Sign Up</a></li>
+                <li style="display: none;"><a href="#" class="nav-link btn-wallet" onclick="openWalletModal()">Wallet</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Invest in Digital Gold</h1>
+            <p>Secure your wealth with fractional gold investment. Start with just $1 and own real gold.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="openAuthModal('login')">Get Started</button>
+                <button class="btn-secondary" onclick="scrollToSection('#calculator')">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="gold-animation">✦</div>
+        </div>
+    </section>
+
+    <!-- Live Gold Price Section -->
+    <section class="price-section">
+        <div class="price-card">
+            <h3>Current Gold Price</h3>
+            <div class="price-display">
+                <span class="price" id="goldPrice">$1,850.25</span>
+                <span class="unit">/oz</span>
+            </div>
+            <div class="price-change" id="priceChange">
+                <span class="change-up">↑ +$15.50 (+0.85%)</span>
+                <span class="time">Last 24h</span>
+            </div>
+        </div>
+        <div class="market-stats">
+            <div class="stat">
+                <span class="stat-label">Total Users</span>
+                <span class="stat-value">50,000+</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Gold Held</span>
+                <span class="stat-value">15,000 oz</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Assets Under Management</span>
+                <span class="stat-value">$27.8M</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Choose GoldVault?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Real Gold Backing</h3>
+                    <p>Every token is backed by real, audited physical gold stored in secure vaults.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Maximum Security</h3>
+                    <p>Military-grade encryption and insurance coverage for all your investments.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-Time Dashboard</h3>
+                    <p>Track your portfolio in real-time with live price updates and analytics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Low Fees</h3>
+                    <p>Competitive pricing with transparent fees. No hidden charges or commissions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Access</h3>
+                    <p>Invest from anywhere in the world with 24/7 trading availability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Ready</h3>
+                    <p>Manage your portfolio on the go with our dedicated mobile application.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Plans Section -->
+    <section class="plans" id="plans">
+        <div class="container">
+            <h2>Investment Plans</h2>
+            <p class="section-subtitle">Choose the plan that works best for you</p>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-badge">Popular</div>
+                    <h3>Starter</h3>
+                    <div class="plan-price">
+                        <span class="amount">$1</span>
+                        <span class="period">Minimum</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ Start investing immediately</li>
+                        <li>✓ Real-time price tracking</li>
+                        <li>✓ Basic portfolio dashboard</li>
+                        <li>✗ Premium analytics</li>
+                        <li>✗ Priority support</li>
+                    </ul>
+                    <button class="plan-btn" onclick="openAuthModal('login')">Get Started</button>
+                </div>
+
+                <div class="plan-card featured">
+                    <div class="plan-badge featured">Most Popular</div>
+                    <h3>Professional</h3>
+                    <div class="plan-price">
+                        <span class="amount">$1,000</span>
+                        <span class="period">Recommended</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ All Starter features</li>
+                        <li>✓ Premium analytics & insights</li>
+                        <li>✓ Portfolio optimization tools</li>
+                        <li>✓ Priority email support</li>
+                        <li>✓ Advanced charting</li>
+                    </ul>
+                    <button class="plan-btn featured" onclick="openAuthModal('login')">Get Started</button>
+                </div>
+
+                <div class="plan-card">
+                    <div class="plan-badge">Elite</div>
+                    <h3>Premium</h3>
+                    <div class="plan-price">
+                        <span class="amount">$10,000</span>
+                        <span class="period">Minimum</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ All Professional features</li>
+                        <li>✓ 24/7 dedicated support</li>
+                        <li>✓ Personalized advisor</li>
+                        <li>✓ Lower trading fees</li>
+                        <li>✓ Custom portfolio strategy</li>
+                    </ul>
+                    <button class="plan-btn" onclick="openAuthModal('login')">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Calculator Section -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <h2>Investment Calculator</h2>
+            <p class="section-subtitle">See your potential returns</p>
+            <div class="calculator-box">
+                <div class="calculator-input">
+                    <div class="input-group">
+                        <label for="investmentAmount">Investment Amount ($)</label>
+                        <input type="number" id="investmentAmount" placeholder="Enter amount" value="1000" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="investmentYears">Investment Period (Years)</label>
+                        <input type="number" id="investmentYears" placeholder="Enter years" value="5" min="1" max="50">
+                    </div>
+                    <div class="input-group">
+                        <label for="annualReturn">Expected Annual Return (%)</label>
+                        <input type="number" id="annualReturn" placeholder="Enter percentage" value="5" min="0" max="50" step="0.1">
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-item">
+                        <span class="result-label">Initial Investment</span>
+                        <span class="result-value" id="resultInitial">$1,000.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Final Amount</span>
+                        <span class="result-value" id="resultFinal">$1,276.28</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Profit</span>
+                        <span class="result-value profit" id="resultProfit">$276.28</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Return on Investment</span>
+                        <span class="result-value roi" id="resultROI">27.63%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">Is my gold investment insured?</button>
+                    <div class="faq-answer">
+                        <p>Yes, all physical gold holdings are fully insured through Lloyd's of London. Each account is covered up to 100% of its value.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Can I withdraw my physical gold?</button>
+                    <div class="faq-answer">
+                        <p>Yes! Premium members can request physical gold delivery. Shipping costs apply based on quantity and location.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What are the trading fees?</button>
+                    <div class="faq-answer">
+                        <p>Starter: 1.5% | Professional: 0.75% | Premium: 0.25%. All fees are deducted from your transaction.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How often can I buy or sell?</button>
+                    <div class="faq-answer">
+                        <p>You can trade 24/7. Transactions are processed instantly during market hours and queued for the next opening.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Is there a minimum holding period?</button>
+                    <div class="faq-answer">
+                        <p>No minimum holding period. You can buy and sell whenever you want with no penalties.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How do I track my investments?</button>
+                    <div class="faq-answer">
+                        <p>Use our real-time dashboard to monitor your portfolio. Get instant notifications for price changes and market alerts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Gold Investment Journey?</h2>
+            <p>Join thousands of investors who are securing their wealth with digital gold</p>
+            <button class="btn-primary btn-large" onclick="openAuthModal('login')">Open Account Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>GoldVault</h4>
+                <p>The safest way to invest in gold digitally. Secured by blockchain technology and backed by real gold.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GoldVault. All rights reserved. | Disclaimer: Past performance does not guarantee future results.</p>
+        </div>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-form">
+                <h2>Login to Your Account</h2>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email or Admin</label>
+                        <input type="text" id="loginEmail" placeholder="user@email.com or admin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn-primary btn-block">Login</button>
+                </form>
+                <div class="form-toggle">
+                    <p>Don't have an account? <a href="#" onclick="switchAuthForm('signup')">Sign up</a></p>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupForm" class="auth-form" style="display: none;">
+                <h2>Create Your Account</h2>
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" placeholder="user@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" placeholder="Minimum 6 characters" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupConfirm">Confirm Password</label>
+                        <input type="password" id="signupConfirm" placeholder="Confirm your password" required>
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">I agree to the <a href="#" style="color: var(--primary-color);">Terms of Service</a> and <a href="#" style="color: var(--primary-color);">Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" class="btn-primary btn-block">Create Account</button>
+                </form>
+                <div class="form-toggle">
+                    <p>Already have an account? <a href="#" onclick="switchAuthForm('login')">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div id="dashboardModal" class="modal">
+        <div class="modal-content dashboard-content">
+            <span class="close" onclick="closeDashboard()">&times;</span>
+
+            <div class="dashboard-header">
+                <h2>Welcome to Your Portfolio</h2>
+                <button class="logout-btn" onclick="handleLogout()">Logout</button>
+            </div>
+
+            <div class="simple-portfolio">
+                <div class="portfolio-overview">
+                    <div class="balance-card">
+                        <span class="balance-label">Account Balance</span>
+                        <span class="balance-amount" id="accountBalance">₹50,000</span>
+                    </div>
+                    <div class="gold-card">
+                        <span class="gold-label">Gold Held</span>
+                        <span class="gold-amount" id="totalGoldHeld">0 g</span>
+                        <span class="portfolio-value" id="portfolioValue">₹0</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-actions">
+                    <button class="btn-portfolio-action" onclick="openDepositModal()">
+                        <span class="action-icon">💰</span>
+                        <span class="action-text">Deposit Money</span>
+                    </button>
+                    <button class="btn-portfolio-action" onclick="openWithdrawalModal()">
+                        <span class="action-icon">💸</span>
+                        <span class="action-text">Withdraw Money</span>
+                    </button>
+                    <button class="btn-portfolio-action" onclick="openWalletModal()">
+                        <span class="action-icon">📊</span>
+                        <span class="action-text">View Transactions</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Modal -->
+    <div id="adminDashboardModal" class="modal">
+        <div class="modal-content admin-dashboard-content">
+            <span class="close" onclick="closeAdminDashboard()">&times;</span>
+            
+            <div class="admin-header">
+                <h1>🔐 Admin Control Panel</h1>
+                <button class="logout-btn" onclick="handleAdminLogout()">Logout</button>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="tab-btn active" onclick="switchAdminTab('overview')">📊 Overview</button>
+                <button class="tab-btn" onclick="switchAdminTab('theme')">🎨 Theme</button>
+                <button class="tab-btn" onclick="switchAdminTab('users')">👥 Users</button>
+                <button class="tab-btn" onclick="switchAdminTab('transactions')">💳 Transactions</button>
+                <button class="tab-btn" onclick="switchAdminTab('content')">📝 Content</button>
+                <button class="tab-btn" onclick="switchAdminTab('settings')">⚙️ Settings</button>
+            </div>
+
+            <!-- Overview Tab -->
+            <div id="tab-overview" class="admin-tab active">
+                <h3>Dashboard Overview</h3>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <span class="card-title">Total Users</span>
+                        <span class="card-value" id="totalUsers">0</span>
+                    </div>
+                    <div class="overview-card">
+                        <span class="card-title">Total Transactions</span>
+                        <span class="card-value" id="totalTransactions">0</span>
+                    </div>
+                    <div class="overview-card">
+                        <span class="card-title">Total Volume (USD)</span>
+                        <span class="card-value" id="totalVolume">$0</span>
+                    </div>
+                    <div class="overview-card">
+                        <span class="card-title">Active Sessions</span>
+                        <span class="card-value" id="activeSessions">0</span>
+                    </div>
+                </div>
+                <div class="overview-chart">
+                    <h4>Recent Activity Log</h4>
+                    <table class="activity-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activityLogBody">
+                            <tr><td colspan="4" style="text-align: center; color: var(--text-light);">No activity yet</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Theme Tab -->
+            <div id="tab-theme" class="admin-tab">
+                <h3>Theme Customization</h3>
+                <div class="theme-controls">
+                    <div class="color-group">
+                        <label for="primaryColor">Primary Color (Gold)</label>
+                        <div class="color-input-group">
+                            <input type="color" id="primaryColor" value="#ffd700">
+                            <input type="text" id="primaryColorHex" placeholder="#ffd700">
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <label for="accentColor">Accent Color (Orange)</label>
+                        <div class="color-input-group">
+                            <input type="color" id="accentColor" value="#ff9500">
+                            <input type="text" id="accentColorHex" placeholder="#ff9500">
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <label for="darkBg">Dark Background</label>
+                        <div class="color-input-group">
+                            <input type="color" id="darkBg" value="#0a0a0a">
+                            <input type="text" id="darkBgHex" placeholder="#0a0a0a">
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <label for="cardBg">Card Background</label>
+                        <div class="color-input-group">
+                            <input type="color" id="cardBg" value="#1a1a1a">
+                            <input type="text" id="cardBgHex" placeholder="#1a1a1a">
+                        </div>
+                    </div>
+
+                    <div class="color-group">
+                        <label for="textColor">Text Color</label>
+                        <div class="color-input-group">
+                            <input type="color" id="textColor" value="#ffffff">
+                            <input type="text" id="textColorHex" placeholder="#ffffff">
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="applyTheme()">Apply Theme</button>
+                        <button class="btn-secondary" onclick="resetTheme()">Reset to Default</button>
+                        <button class="btn-secondary" onclick="exportTheme()">Export Theme</button>
+                    </div>
+
+                    <div class="theme-preview">
+                        <h4>Preview</h4>
+                        <div class="preview-box" id="themePreview"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div id="tab-users" class="admin-tab">
+                <h3>User Management</h3>
+                <div class="users-controls">
+                    <input type="text" id="searchUsers" placeholder="Search users..." class="search-input" onkeyup="filterUsers()">
+                    <select id="userStatusFilter" class="filter-select" onchange="filterUsers()">
+                        <option value="all">All Users</option>
+                        <option value="active">Active Users</option>
+                        <option value="inactive">Inactive Users</option>
+                    </select>
+                    <button class="btn-secondary" onclick="refreshUsersList()">🔄 Refresh</button>
+                    <button class="btn-primary" onclick="exportUsersData()">📊 Export Data</button>
+                </div>
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Balance</th>
+                            <th>Gold Holdings</th>
+                            <th>Joined Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <tr><td colspan="7" style="text-align: center; color: var(--text-light);">No users yet</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Transactions Tab -->
+            <div id="tab-transactions" class="admin-tab">
+                <h3>Transaction Management</h3>
+                <div class="transactions-filters">
+                    <select id="transactionFilter" class="filter-select">
+                        <option value="all">All Transactions</option>
+                        <option value="buy">Buy Transactions</option>
+                        <option value="sell">Sell Transactions</option>
+                    </select>
+                    <input type="date" id="transactionDate" class="filter-date">
+                    <button class="btn-secondary" onclick="filterTransactions()">🔍 Filter</button>
+                </div>
+                <table class="transactions-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>User</th>
+                            <th>Type</th>
+                            <th>Amount (oz)</th>
+                            <th>Price/oz</th>
+                            <th>Total USD</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionsTableBody">
+                        <tr><td colspan="7" style="text-align: center; color: var(--text-light);">No transactions yet</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="tab-settings" class="admin-tab">
+                <h3>Site Settings</h3>
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label for="siteName">Site Name</label>
+                        <input type="text" id="siteName" placeholder="GoldVault" value="GoldVault">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="siteDescription">Site Description</label>
+                        <textarea id="siteDescription" placeholder="Digital gold investment platform" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="minInvestment">Minimum Investment ($)</label>
+                        <input type="number" id="minInvestment" value="1" min="0.01" step="0.01">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="starterFee">Starter Plan Fee (%)</label>
+                        <input type="number" id="starterFee" value="1.5" min="0" max="10" step="0.1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="professionalFee">Professional Plan Fee (%)</label>
+                        <input type="number" id="professionalFee" value="0.75" min="0" max="10" step="0.1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="premiumFee">Premium Plan Fee (%)</label>
+                        <input type="number" id="premiumFee" value="0.25" min="0" max="10" step="0.1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Contact Email</label>
+                        <input type="email" id="contactEmail" placeholder="support@goldvault.com">
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="maintenanceMode">
+                        <label for="maintenanceMode">Maintenance Mode (temporarily disable site)</label>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="saveSettings()">Save Settings</button>
+                        <button class="btn-secondary" onclick="resetSettings()">Reset to Default</button>
+                    </div>
+
+                    <div class="settings-info">
+                        <h4>Change Admin Credentials</h4>
+                        <div class="form-group">
+                            <label for="newAdminPassword">New Admin Password</label>
+                            <input type="password" id="newAdminPassword" placeholder="Enter new password">
+                        </div>
+                        <button class="btn-primary" onclick="updateAdminPassword()">Update Password</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Settings Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content profile-modal-content">
+            <span class="close" onclick="closeProfileModal()">&times;</span>
+
+            <div class="profile-header">
+                <h2>⚙️ Profile Settings</h2>
+            </div>
+
+            <div class="profile-tabs">
+                <button class="profile-tab active" onclick="switchProfileTab('settings')">Settings</button>
+                <button class="profile-tab" onclick="switchProfileTab('transactions')">Transactions</button>
+            </div>
+
+            <div id="profileSettingsTab" class="profile-tab-content active">
+                <div class="profile-form">
+                    <div class="profile-avatar-section">
+                        <div class="current-avatar">
+                            <span class="profile-avatar-large" id="currentAvatar">👤</span>
+                        </div>
+                        <div class="avatar-options">
+                            <button class="avatar-btn" onclick="changeAvatar('👤')">👤</button>
+                            <button class="avatar-btn" onclick="changeAvatar('👨')">👨</button>
+                            <button class="avatar-btn" onclick="changeAvatar('👩')">👩</button>
+                            <button class="avatar-btn" onclick="changeAvatar('🧑')">🧑</button>
+                            <button class="avatar-btn" onclick="changeAvatar('👨‍💼')">👨‍💼</button>
+                            <button class="avatar-btn" onclick="changeAvatar('👩‍💼')">👩‍💼</button>
+                        </div>
+                    </div>
+
+                    <form onsubmit="updateProfile(event)">
+                        <div class="form-group">
+                            <label for="profileName">Full Name</label>
+                            <input type="text" id="profileName" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileEmail">Email Address</label>
+                            <input type="email" id="profileEmail" placeholder="Enter your email" readonly>
+                            <small style="color: var(--text-muted);">Email cannot be changed</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileUsername">Username</label>
+                            <input type="text" id="profileUsername" placeholder="Choose a username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileBio">Bio (Optional)</label>
+                            <textarea id="profileBio" placeholder="Tell us about yourself..." rows="3" maxlength="200"></textarea>
+                            <small id="bioCounter" style="color: var(--text-muted);">0/200 characters</small>
+                        </div>
+
+                        <div class="profile-buttons">
+                            <button type="submit" class="btn-primary">Save Changes</button>
+                            <button type="button" class="btn-secondary" onclick="closeProfileModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="profileTransactionsTab" class="profile-tab-content">
+                <div class="transactions-section">
+                    <h3>💳 Transaction History</h3>
+                    <div class="transaction-filters">
+                        <button class="filter-btn active" onclick="filterTransactions('all')">All</button>
+                        <button class="filter-btn" onclick="filterTransactions('deposit')">Deposits</button>
+                        <button class="filter-btn" onclick="filterTransactions('withdrawal')">Withdrawals</button>
+                    </div>
+                    <div class="transactions-list" id="transactionsList">
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-type">Deposit</div>
+                                <div class="transaction-amount">₹1,000</div>
+                                <div class="transaction-date">2024-01-15 14:30</div>
+                            </div>
+                            <div class="transaction-status">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-type">Withdrawal</div>
+                                <div class="transaction-amount">₹500</div>
+                                <div class="transaction-date">2024-01-14 10:15</div>
+                            </div>
+                            <div class="transaction-status">
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-type">Deposit</div>
+                                <div class="transaction-amount">₹2,000</div>
+                                <div class="transaction-date">2024-01-13 16:45</div>
+                            </div>
+                            <div class="transaction-status">
+                                <span class="status-badge cancelled">Cancelled</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-transactions" id="noTransactions" style="display: none;">
+                        <p>No transactions found</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deposit Modal -->
+    <div id="depositModal" class="modal">
+        <div class="modal-content deposit-modal-content">
+            <span class="close" onclick="closeDepositModal()">&times;</span>
+
+            <div class="deposit-header">
+                <h2>💰 Deposit Funds</h2>
+                <p>Add money to your GoldVault account</p>
+            </div>
+
+            <div class="deposit-methods">
+                <div class="method-tabs">
+                    <button class="method-tab active" onclick="switchDepositMethod('upi')">📱 UPI</button>
+                </div>
+
+                <div id="upiMethod" class="deposit-method active">
+                    <div class="upi-options">
+                        <h4>Scan QR Code to Pay</h4>
+                        <div class="upi-qr-section">
+                            <div class="qr-code" id="upiQRCode">
+                                <!-- QR Code will be generated here -->
+                                <div class="qr-placeholder">
+                                    <span class="qr-icon">📱</span>
+                                    <p>QR Code will appear here</p>
+                                </div>
+                            </div>
+                            <div class="upi-details">
+                                <div class="upi-id">
+                                    <span class="label">UPI ID:</span>
+                                    <span class="value" id="upiId">goldvault@upi</span>
+                                    <button class="copy-btn" onclick="copyUPIId()">📋 Copy</button>
+                                </div>
+                                <div class="amount-display">
+                                    <span class="label">Amount:</span>
+                                    <span class="value" id="upiAmount">₹0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="upi-amounts">
+                            <h4>Select Amount</h4>
+                            <div class="amount-buttons">
+                                <button class="amount-btn" onclick="selectUPIAmount(10)">₹10</button>
+                                <button class="amount-btn" onclick="selectUPIAmount(50)">₹50</button>
+                                <button class="amount-btn" onclick="selectUPIAmount(100)">₹100</button>
+                                <button class="amount-btn" onclick="selectUPIAmount(200)">₹200</button>
+                                <button class="amount-btn" onclick="selectUPIAmount(500)">₹500</button>
+                                <button class="amount-btn" onclick="selectUPIAmount(1000)">₹1000</button>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customUPIAmount">Or Enter Custom Amount (₹)</label>
+                                <input type="number" id="customUPIAmount" min="1" max="50000" placeholder="Enter amount" oninput="updateCustomUPIAmount()">
+                                <small class="amount-info">Minimum: ₹1 | Maximum: ₹50,000</small>
+                            </div>
+                        </div>
+
+                        <div class="upi-instructions">
+                            <h4>How to Pay:</h4>
+                            <ol>
+                                <li>Open your UPI app (Google Pay, PhonePe, Paytm, etc.)</li>
+                                <li>Scan the QR code above</li>
+                                <li>Verify the amount and complete the payment</li>
+                                <li>Your account will be credited instantly</li>
+                            </ol>
+                        </div>
+
+                        <button type="button" class="btn-deposit" onclick="generateUPIQR()" id="generateUPIBtn">
+                            Generate QR Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Withdrawal Modal -->
+    <div id="withdrawalModal" class="modal">
+        <div class="modal-content withdrawal-modal-content">
+            <span class="close" onclick="closeWithdrawalModal()">&times;</span>
+
+            <div class="withdrawal-header">
+                <h2>💸 Withdraw Funds</h2>
+                <p>Withdraw money from your GoldVault account</p>
+            </div>
+
+            <div class="withdrawal-balance">
+                <div class="balance-card">
+                    <span class="balance-label">Available Balance</span>
+                    <span class="balance-amount" id="availableBalance">$0.00</span>
+                </div>
+            </div>
+
+            <div class="withdrawal-methods">
+                <div class="method-tabs">
+                    <button class="method-tab active" onclick="switchWithdrawalMethod('upi')">📱 UPI</button>
+                </div>
+
+                <div id="upiWithdrawalMethod" class="withdrawal-method active">
+                    <form onsubmit="processWithdrawal(event, 'upi')">
+                        <div class="form-group">
+                            <label for="upiId">UPI ID</label>
+                            <input type="text" id="upiId" placeholder="user@upi" required>
+                            <small class="amount-info">Enter your UPI ID (e.g., user@paytm, user@gpay)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="upiWithdrawAmount">Withdrawal Amount ($)</label>
+                            <input type="number" id="upiWithdrawAmount" min="10" max="5000" step="10" placeholder="Enter amount" required>
+                            <small class="amount-info">Minimum: $10 | Maximum: $5,000 | Fee: $1.99</small>
+                        </div>
+
+                        <button type="submit" class="btn-withdraw">
+                            <span class="btn-text">Withdraw to UPI</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sports Betting Modal -->
+    <div id="sportsModal" class="modal">
+        <div class="modal-content sports-modal-content">
+            <span class="close" onclick="closeSportsModal()">&times;</span>
+
+            <div class="sports-header">
+                <h2>🏆 Sports Betting</h2>
+                <p>Place bets on your favorite sports events</p>
+            </div>
+
+            <div class="sports-balance">
+                <div class="balance-display">
+                    <span class="balance-label">Betting Balance:</span>
+                    <span class="balance-amount" id="bettingBalance">$0.00</span>
+                    <button class="btn-small" onclick="addBettingFunds()">Add Funds</button>
+                </div>
+            </div>
+
+            <div class="sports-categories">
+                <div class="category-tabs">
+                    <button class="category-tab active" onclick="switchSportsCategory('football')">⚽ Football</button>
+                    <button class="category-tab" onclick="switchSportsCategory('basketball')">🏀 Basketball</button>
+                    <button class="category-tab" onclick="switchSportsCategory('tennis')">🎾 Tennis</button>
+                    <button class="category-tab" onclick="switchSportsCategory('boxing')">🥊 Boxing</button>
+                    <button class="category-tab" onclick="switchSportsCategory('racing')">🏎️ Racing</button>
+                </div>
+
+                <div id="footballCategory" class="sports-category active">
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <div class="match-header">
+                                <span class="match-league">Premier League</span>
+                                <span class="match-time">Today 8:00 PM</span>
+                            </div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <span class="team-name">Manchester City</span>
+                                    <span class="odds">1.85</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <span class="team-name">Arsenal</span>
+                                    <span class="odds">3.20</span>
+                                </div>
+                            </div>
+                            <div class="match-actions">
+                                <button class="bet-btn" onclick="placeBet('Manchester City', 1.85)">Bet on City</button>
+                                <button class="bet-btn" onclick="placeBet('Arsenal', 3.20)">Bet on Arsenal</button>
+                                <button class="bet-btn draw" onclick="placeBet('Draw', 4.50)">Draw (4.50)</button>
+                            </div>
+                        </div>
+
+                        <div class="match-card">
+                            <div class="match-header">
+                                <span class="match-league">La Liga</span>
+                                <span class="match-time">Tomorrow 9:00 PM</span>
+                            </div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <span class="team-name">Real Madrid</span>
+                                    <span class="odds">1.65</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <span class="team-name">Barcelona</span>
+                                    <span class="odds">4.10</span>
+                                </div>
+                            </div>
+                            <div class="match-actions">
+                                <button class="bet-btn" onclick="placeBet('Real Madrid', 1.65)">Bet on Madrid</button>
+                                <button class="bet-btn" onclick="placeBet('Barcelona', 4.10)">Bet on Barca</button>
+                                <button class="bet-btn draw" onclick="placeBet('Draw', 5.20)">Draw (5.20)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="basketballCategory" class="sports-category">
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <div class="match-header">
+                                <span class="match-league">NBA</span>
+                                <span class="match-time">Live Now</span>
+                            </div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <span class="team-name">Lakers</span>
+                                    <span class="odds">2.10</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <span class="team-name">Warriors</span>
+                                    <span class="odds">1.75</span>
+                                </div>
+                            </div>
+                            <div class="match-actions">
+                                <button class="bet-btn" onclick="placeBet('Lakers', 2.10)">Bet on Lakers</button>
+                                <button class="bet-btn" onclick="placeBet('Warriors', 1.75)">Bet on Warriors</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tennisCategory" class="sports-category">
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <div class="match-header">
+                                <span class="match-league">ATP Masters 1000</span>
+                                <span class="match-time">Today 2:00 PM</span>
+                            </div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <span class="team-name">Novak Djokovic</span>
+                                    <span class="odds">1.30</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <span class="team-name">Rafael Nadal</span>
+                                    <span class="odds">3.50</span>
+                                </div>
+                            </div>
+                            <div class="match-actions">
+                                <button class="bet-btn" onclick="placeBet('Djokovic', 1.30)">Bet on Djokovic</button>
+                                <button class="bet-btn" onclick="placeBet('Nadal', 3.50)">Bet on Nadal</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="boxingCategory" class="sports-category">
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <div class="match-header">
+                                <span class="match-league">Heavyweight Championship</span>
+                                <span class="match-time">Dec 15, 10:00 PM</span>
+                            </div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <span class="team-name">Tyson Fury</span>
+                                    <span class="odds">1.90</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <span class="team-name">Oleksandr Usyk</span>
+                                    <span class="odds">1.90</span>
+                                </div>
+                            </div>
+                            <div class="match-actions">
+                                <button class="bet-btn" onclick="placeBet('Fury', 1.90)">Bet on Fury</button>
+                                <button class="bet-btn" onclick="placeBet('Usyk', 1.90)">Bet on Usyk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="racingCategory" class="sports-category">
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <div class="match-header">
+                                <span class="match-league">Formula 1 - Abu Dhabi GP</span>
+                                <span class="match-time">Dec 12, 2:00 PM</span>
+                            </div>
+                            <div class="racing-options">
+                                <div class="race-bet">
+                                    <span>To Win:</span>
+                                    <button class="bet-btn small" onclick="placeBet('Hamilton', 3.50)">Hamilton (3.50)</button>
+                                    <button class="bet-btn small" onclick="placeBet('Verstappen', 2.10)">Verstappen (2.10)</button>
+                                    <button class="bet-btn small" onclick="placeBet('Leclerc', 4.20)">Leclerc (4.20)</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Betting Slip -->
+            <div class="betting-slip" id="bettingSlip" style="display: none;">
+                <h4>Your Bets</h4>
+                <div class="bets-list" id="betsList"></div>
+                <div class="betting-total">
+                    <div class="total-row">
+                        <span>Total Stake:</span>
+                        <span id="totalStake">$0.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Potential Win:</span>
+                        <span id="potentialWin">$0.00</span>
+                    </div>
+                </div>
+                <button class="btn-place-bet" onclick="confirmBets()">Place Bets</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wallet Modal -->
+    <div id="walletModal" class="modal">
+        <div class="modal-content wallet-modal-content">
+            <span class="close" onclick="closeWalletModal()">&times;</span>
+
+            <div class="wallet-header">
+                <h2>💰 My Wallet</h2>
+                <p>Manage your funds and view your balance</p>
+            </div>
+
+            <div class="wallet-balance">
+                <div class="balance-card">
+                    <span class="balance-label">Current Balance</span>
+                    <span class="balance-amount" id="walletBalance">₹50,000</span>
+                </div>
+            </div>
+
+            <div class="wallet-actions">
+                <button class="btn-wallet-action" onclick="openDepositModal()">
+                    <span class="action-icon">💳</span>
+                    <span class="action-text">Add Money</span>
+                </button>
+                <button class="btn-wallet-action" onclick="openWithdrawalModal()">
+                    <span class="action-icon">💸</span>
+                    <span class="action-text">Withdraw</span>
+                </button>
+                <button class="btn-wallet-action" onclick="openDashboard()">
+                    <span class="action-icon">📊</span>
+                    <span class="action-text">View Portfolio</span>
+                </button>
+            </div>
+
+            <div class="wallet-info">
+                <div class="info-section">
+                    <h4>Recent Activity</h4>
+                    <div class="activity-list" id="walletActivity">
+                        <p style="text-align: center; color: var(--text-light); padding: 1rem;">No recent activity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
